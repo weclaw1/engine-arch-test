@@ -8,13 +8,21 @@ const views = ref([
   { id: 4, name: 'Client Communication Messages' },
 ]);
 
-const selectedViews = ref<number[]>([]);
+const selectedViews = ref<{ id: number; name: string }[]>([]);
+
+const emit = defineEmits<{
+  change: [selectedViews: { id: number; name: string }[]]
+}>();
+
+const onChange = () => {
+  emit('change', selectedViews.value);
+};
 </script>
 <template>
   <p>Select views to add to that role</p>
   <ul>
     <li v-for="view in views" :key="view.id">
-      <input type="checkbox" v-model="selectedViews" :value="view.id" />
+      <input type="checkbox" v-model="selectedViews" :value="view" @change="onChange" />
       {{ view.name }}
     </li>
   </ul>
