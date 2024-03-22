@@ -15,8 +15,8 @@ const onChange = (selectedViews: { id: number; name: string }[]) => {
 </script>
 
 <template>
-  <div class="role-panel">
-    <input type="text" v-model="role" />
+  <div class="flex flex-col m-4 gap-4">
+    <input type="text" v-model="role" placeholder="Role name" />
     <RolePanelViewList @change="onChange"/>
   </div>
 </template>

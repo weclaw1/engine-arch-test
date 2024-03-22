@@ -5,7 +5,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="role-views-list">
+  <div class="flex flex-col m-4 gap-4">
     <p>Selected views</p>
     <ul>
       <li v-for="view in props.views" :key="view.id">
