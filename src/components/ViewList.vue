@@ -1,0 +1,21 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const views = ref([
+  { id: 1, name: 'Dispatcher Screen' },
+  { id: 2, name: 'Shifts Manager' },
+  { id: 3, name: 'Live Panel' },
+  { id: 4, name: 'Client Communication Messages' },
+]);
+
+const selectedViews = ref<number[]>([]);
+</script>
+<template>
+  <p>Select views to add to that role</p>
+  <ul>
+    <li v-for="view in views" :key="view.id">
+      <input type="checkbox" v-model="selectedViews" :value="view.id" />
+      {{ view.name }}
+    </li>
+  </ul>
+</template>
