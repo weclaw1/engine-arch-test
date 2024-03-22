@@ -6,6 +6,9 @@ const views = ref([
   { id: 2, name: 'Shifts Manager' },
   { id: 3, name: 'Live Panel' },
   { id: 4, name: 'Client Communication Messages' },
+  { id: 5, name: 'VCP' },
+  { id: 6, name: 'VPC' },
+  { id: 7, name: 'VSA' },
 ]);
 
 const search = ref('');
